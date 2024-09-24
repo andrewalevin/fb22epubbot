@@ -1,0 +1,11 @@
+[Unit]
+Description=FB22 EPUB Bot
+
+[Service]
+Type=simple
+WorkingDirectory={{WORKING_DIRECTORY}}
+ExecStart={{WORKING_DIRECTORY}}/venv/bin/python3 -m fb22epubbot
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
