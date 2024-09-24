@@ -10,4 +10,4 @@ fi
 # Сохранение зависимостей проекта в requirements.txt
 pip freeze > requirements.txt
 
-echo "✅ Зависимости сохранены в файл requirements.txt"
+echo -e "✅ Зависимости сохранены в файл requirements.txt\n"
