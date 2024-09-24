@@ -12,9 +12,41 @@
 - Отправляет сконвертированный файл обратно с обложкой (если доступна)
 - Периодически очищает старые файлы
 
-## Установка
+## 🚀 Installation 
 
-1. **Установите необходимые зависимости:**
+You can install `fb22epubbot` in several ways:
 
-   ```bash
-   pip install fb22epubbot
+### 1. 🐳 Installation via Docker
+
+To install `fb22epubbot` using Docker, run the following command:
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/andrewalevin/fb22epubbot/refs/heads/master/install-docker.sh)
+```
+
+### 2. 💻 Manual Installation for macOS and Linux 
+
+To install FB22 EPUB Bot manually on macOS or Linux, run the following command:
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/andrewalevin/fb22epubbot/refs/heads/master/install-manual-macos-linux.sh)
+```
+
+### 3. 🔧 Direct Installation 
+
+If you prefer to install the package manually or for dev, running this:
+
+```bash
+
+cd fb22epubbot
+
+python3 -m venv venv
+
+source venv/bin/activate  # For Linux and macOS
+
+pip install fb22epubbot
+
+
+
+```
+
