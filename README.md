@@ -37,16 +37,10 @@ bash <(curl -s https://raw.githubusercontent.com/andrewalevin/fb22epubbot/refs/h
 If you prefer to install the package manually or for dev, running this:
 
 ```bash
-
-cd fb22epubbot
-
-python3 -m venv venv
-
-source venv/bin/activate  # For Linux and macOS
-
+mkdir -p fb22epubbot && cd fb22epubbot
+python3 -m venv venv && source venv/bin/activate
 pip install fb22epubbot
-
-
-
+echo "🔑 Insert BOT_TOKEN: " && read BOT_TOKEN && echo "BOT_TOKEN=$BOT_TOKEN" > .env
+fb22epubbot
 ```
 
