@@ -1,12 +1,14 @@
 #!/bin/bash
 
+
+
 # Активируем виртуальное окружение
-if [[ -d "venv" ]]; then
-    source venv/bin/activate
-else
-    echo "Ошибка: Виртуальное окружие не найдено."
-    exit 1
-fi
+#if [[ -d "venv" ]]; then
+#   source venv/bin/activate
+#else
+#   echo "Ошибка: Виртуальное окружие не найдено."
+#    exit 1
+#fi
 
 # Очищаем папку dist
 if [[ -d "dist" ]]; then

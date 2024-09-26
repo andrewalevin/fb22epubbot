@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fb22epubbot"
-version = "0.9"
+version = "0.12"
 description = "Telegram bot for converting FB2 files to EPUB"
 authors = ["Andrew Levin <your.email@example.com>"]
 license = "MIT"

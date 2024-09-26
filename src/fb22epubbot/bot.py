@@ -33,7 +33,7 @@ CALIBRE_CONVERT_COMMAND = 'ebook-convert'
 DATA_DIR = Path('data')
 DATA_DIR.mkdir(exist_ok=True)
 
-FILE_LIFETIME = 3600
+FILE_LIFETIME = 1200
 
 
 def check_calibre_available():
@@ -171,6 +171,7 @@ def main():
         logging.error("🔴 The bot has been stopped because Calibre is unavailable.")
         return
 
+    logging.info('🚀 Bot is starting... ')
     asyncio.run(run_bot())
 
 
