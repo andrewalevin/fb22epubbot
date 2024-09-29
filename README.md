@@ -34,7 +34,7 @@ bash <(curl -s https://raw.githubusercontent.com/andrewalevin/fb22epubbot/refs/h
 
 ### 3. 🔧 Direct Installation 
 
-If you prefer to install the package manually or for dev, running this:
+If you prefer to install the package manually or for dev, copy and run this:
 
 ```bash
 mkdir -p fb22epubbot && cd fb22epubbot
