@@ -13,6 +13,8 @@ from pathlib import Path
 import time
 import shutil
 
+from fb22epubbot.utils import filename_tuning
+
 load_dotenv()
 TOKEN = os.getenv("BOT_TOKEN")
 
@@ -119,13 +121,15 @@ async def handle_document(message: Message):
         if thumbnail and thumbnail.exists():
             thumb = FSInputFile(thumbnail)
 
+        stem_filename_upgraded = filename_tuning(epub_file_path.stem)
+
         await bot.send_document(
             chat_id=message.chat.id,
             reply_to_message_id=message.message_id,
             parse_mode='HTML',
             document=FSInputFile(
                 path=epub_file_path.as_posix(),
-                filename=epub_file_path.name),
+                filename=epub_file_path.with_stem(stem_filename_upgraded).name),
             thumbnail=thumb)
 
         await converting_message.delete()
