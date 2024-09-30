@@ -28,7 +28,7 @@ python3 -m venv "$VENV_DIR"
 source "$VENV_DIR/bin/activate"
 
 # Установка необходимых пакетов
-pip installation-configurations fb22epubbot
+pip install fb22epubbot
 
 # Создание .env файла
 echo "BOT_TOKEN=$BOT_TOKEN" > .env
