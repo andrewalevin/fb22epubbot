@@ -24,23 +24,19 @@ To install `fb22epubbot` using Docker, run the following command:
 bash <(curl -s https://raw.githubusercontent.com/andrewalevin/fb22epubbot/refs/heads/master/install-docker.sh)
 ```
 
-### 2. 💻 Manual Installation for macOS and Linux 
+### 2. 💻 System Installation for macOS and Linux 
 
 To install FB22 EPUB Bot manually on macOS or Linux, run the following command:
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/andrewalevin/fb22epubbot/refs/heads/master/install-manual-macos-linux.sh)
+bash <(curl -s https://raw.githubusercontent.com/andrewalevin/fb22epubbot/refs/heads/master/install-system-macos-linux.sh)
 ```
 
-### 3. 🔧 Direct Installation 
+### 3. 🔧 Manual Installation in directory
 
 If you prefer to install the package manually or for dev, copy and run this:
 
 ```bash
-mkdir -p fb22epubbot && cd fb22epubbot
-python3 -m venv venv && source venv/bin/activate
-pip installation-configurations fb22epubbot
-echo "🔑 Insert BOT_TOKEN: " && read BOT_TOKEN && echo "BOT_TOKEN=$BOT_TOKEN" > .env
-fb22epubbot
+bash <(curl -s https://raw.githubusercontent.com/andrewalevin/fb22epubbot/refs/heads/master/install-manual-directory.sh)
 ```
 
