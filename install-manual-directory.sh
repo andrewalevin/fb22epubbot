@@ -15,4 +15,4 @@ read -p "🔑 Insert BOT_TOKEN: " BOT_TOKEN
 echo "BOT_TOKEN=$BOT_TOKEN" > .env
 
 # Run the bot
-python3 fb22epubbot
+fb22epubbot
