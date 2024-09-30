@@ -22,6 +22,8 @@ else
   NEW_TAG=$((MAX_TAG + 1))
 fi
 
+NEW_TAG=24
+
 # Построить образ с новым тэгом
 docker build -t $REGISTRY/$IMAGE_NAME:$NEW_TAG .
 
