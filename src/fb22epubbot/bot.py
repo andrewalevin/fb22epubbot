@@ -110,7 +110,7 @@ async def handle_document(message: Message):
     try:
         await bot.download_file(file_info.file_path, fb2_file_path.as_posix())
 
-        converting_message = await message.answer("⏳ Converting...", disable_notification=True)
+        status_message = await message.answer("⏳ Converting...", disable_notification=True)
 
         await convert_fb2_to_epub(fb2_file_path, epub_file_path)
 
@@ -123,6 +123,15 @@ async def handle_document(message: Message):
 
         stem_filename_upgraded = filename_tuning(epub_file_path.stem)
 
+        file_size = epub_file_path.stat().st_size
+
+        file_size_mb = file_size / (1024 * 1024)
+
+        if file_size_mb > 49:
+            await status_message.edit_text('🔥 Cannot send converted file. '
+                                           'It is larger than max telegram bot file transfer size (49 MB.)')
+            return
+
         await bot.send_document(
             chat_id=message.chat.id,
             reply_to_message_id=message.message_id,
@@ -132,7 +141,7 @@ async def handle_document(message: Message):
                 filename=epub_file_path.with_stem(stem_filename_upgraded).name),
             thumbnail=thumb)
 
-        await converting_message.delete()
+        await status_message.delete()
 
     except Exception as e:
         await message.answer(f"🔴 Oh no! Something went wrong! 😓 Error: {e}")
