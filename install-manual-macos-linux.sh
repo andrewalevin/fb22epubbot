@@ -28,7 +28,7 @@ python3 -m venv "$VENV_DIR"
 source "$VENV_DIR/bin/activate"
 
 # Установка необходимых пакетов
-pip install fb22epubbot
+pip installation-configurations fb22epubbot
 
 # Создание .env файла
 echo "BOT_TOKEN=$BOT_TOKEN" > .env
@@ -43,7 +43,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
     # Создание сервиса systemd
     SERVICE_PATH="/etc/systemd/system/fb22epubbot.service"
-    TEMPLATE_PATH="install/fb22epubbot.service.template"
+    TEMPLATE_PATH="installation-configurations/fb22epubbot.service.template"
 
     sed "s|{{WORKING_DIRECTORY}}|$WORKING_DIRECTORY|g" "$TEMPLATE_PATH" | sudo tee "$SERVICE_PATH" > /dev/null
 
@@ -59,7 +59,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     # Создание plist файла для launchctl
     PLIST_PATH=~/Library/LaunchAgents/com.andrewalevin.fb22epubbot.plist
-    TEMPLATE_PATH="install/com.andrewalevin.fb22epubbot.plist.template"
+    TEMPLATE_PATH="installation-configurations/com.andrewalevin.fb22epubbot.plist.template"
 
     sed "s|{{WORKING_DIRECTORY}}|$WORKING_DIRECTORY|g" "$TEMPLATE_PATH" > "$PLIST_PATH"
 

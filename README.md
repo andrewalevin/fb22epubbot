@@ -39,7 +39,7 @@ If you prefer to install the package manually or for dev, copy and run this:
 ```bash
 mkdir -p fb22epubbot && cd fb22epubbot
 python3 -m venv venv && source venv/bin/activate
-pip install fb22epubbot
+pip installation-configurations fb22epubbot
 echo "🔑 Insert BOT_TOKEN: " && read BOT_TOKEN && echo "BOT_TOKEN=$BOT_TOKEN" > .env
 fb22epubbot
 ```
