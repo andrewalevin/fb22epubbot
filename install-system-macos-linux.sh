@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Версия скрипта
-SCRIPT_VERSION="104"
+SCRIPT_VERSION="105"
 echo "🔖 version: $SCRIPT_VERSION"
 echo ""
 
 # Step 1: Запрос BOT_TOKEN и создание проектной директории
-echo "🔑 Step 1: Запрос BOT_TOKEN..."
+echo "Step 1: Запрос BOT_TOKEN"
 read -p "🔑 Введите BOT_TOKEN: " BOT_TOKEN
 
 # Проверка на пустой токен
