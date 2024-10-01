@@ -71,10 +71,22 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     echo "🔧 Step 6: Настройка запуска через launchctl..."
 
     PLIST_PATH=~/Library/LaunchAgents/com.andrewalevin.fb22epubbot.plist
-    TEMPLATE_PATH="installation-configurations/com.andrewalevin.fb22epubbot.plist.template"
+    TEMPLATE_URL="https://raw.githubusercontent.com/andrewalevin/fb22epubbot/refs/heads/master/installation-configurations/com.andrewalevin.fb22epubbot.plist.template"
     WORKING_DIRECTORY=$(pwd)
 
-    sed "s|{{WORKING_DIRECTORY}}|$WORKING_DIRECTORY|g" "$TEMPLATE_PATH" > "$PLIST_PATH"
-    echo "Для активации выполните: launchctl load $PLIST_PATH"
-    echo ""
+    # Скачиваем содержимое файла шаблона в переменную
+    TEMPLATE_CONTENT=$(curl -s "$TEMPLATE_URL")
+
+    # Проверяем, было ли содержимое успешно загружено
+    if [[ -n "$TEMPLATE_CONTENT" ]]; then
+        # Выполняем замену и создаем новый файл plist
+        echo "${TEMPLATE_CONTENT//\{\{WORKING_DIRECTORY\}\}/$WORKING_DIRECTORY}" > "$PLIST_PATH"
+        echo "Для активации выполните: launchctl load $PLIST_PATH"
+        echo ""
+    else
+        echo "Error: Template content could not be downloaded."
+    fi
+
+
+
 fi
